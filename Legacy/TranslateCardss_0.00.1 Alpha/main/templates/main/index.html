@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+    <h1> Head </h1>
+
+    <div>
+    {% if not user.is_authenticated %}
+    <p> Не Авторизован </p>
+    <a href=""> Home</a>
+    <a href="{% url 'users:register' %}">Register</a>
+    <a href="{% url 'users:login' %}">Login</a>
+    {% else %}
+    <p> Авторизован</p>
+    <a href=""> Home</a>
+    <a href=""> Exit</a>
+    <a href=""> Cardss </a>
+    {% endif %}
+    </div>
+</body>
+
+</html>
